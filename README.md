@@ -8,11 +8,16 @@
 
 ---
 
+**🌐 Site ao vivo:** [portifolio-igor-silva-santos.vercel.app](https://portifolio-igor-silva-santos.vercel.app/)  
+**👤 GitHub:** [github.com/igor-silva-santos](https://github.com/igor-silva-santos)
+
+---
+
 ## 🌐 Sobre o Portfólio
 
 ```typescript
 const portfolio = {
-  owner: "Igor Santos",
+  owner: "Igor Silva Santos",
   purpose: "Exibição de trajetória profissional e projetos em destaque",
   techStack: ["HTML5", "Vanilla CSS", "JavaScript", "Canvas API"],
   features: [

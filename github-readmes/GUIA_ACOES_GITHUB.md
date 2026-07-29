@@ -6,7 +6,7 @@
 
 ## ✅ PASSO 1 — Renomear "AndressaModas"
 
-1. Acesse: https://github.com/MysterySalsicha/AndressaModas/settings
+1. Acesse: https://github.com/igor-silva-santos/AndressaModas/settings
 2. No campo **"Repository name"**, troque por: **`loja-moda-online`**
 3. Clique em **"Rename"** e confirme
 
@@ -19,7 +19,7 @@
 O GitHub tem um recurso especial: se você criar um repositório com o **mesmo nome do seu usuário**, o README.md aparece no topo do seu perfil.
 
 1. Acesse: https://github.com/new
-2. **Repository name:** `MysterySalsicha` (exatamente igual ao usuário)
+2. **Repository name:** `igor-silva-santos` (exatamente igual ao usuário)
 3. Marque **"Public"**
 4. Marque **"Add a README file"**
 5. Clique em **"Create repository"**
@@ -73,7 +73,7 @@ Para cada repositório principal:
 
 ## ✅ PASSO 5 — Fixar os 6 melhores projetos no perfil
 
-1. Acesse seu perfil: https://github.com/MysterySalsicha
+1. Acesse seu perfil: https://github.com/igor-silva-santos
 2. Clique em **"Customize your pins"**
 3. Selecione exatamente estes 6:
    - ✅ `loja-moda-online`

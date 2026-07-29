@@ -42,6 +42,6 @@ Diferente de apps CRUD simples, o **Ficha OP** possui uma lógica de negócio de
 
 <div align="center">
 
-Desenvolvido por **[Igor Santos](https://github.com/MysterySalsicha)** · Full Stack Developer
+Desenvolvido por **[Igor Santos](https://github.com/igor-silva-santos)** · Full Stack Developer
 
 </div>

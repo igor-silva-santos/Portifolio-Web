@@ -43,6 +43,6 @@ O objetivo foi resolver uma dor real de profissionais de saúde: a gestão de ag
 
 <div align="center">
 
-Desenvolvido por **[Igor Santos](https://github.com/MysterySalsicha)** · Full Stack Developer
+Desenvolvido por **[Igor Santos](https://github.com/igor-silva-santos)** · Full Stack Developer
 
 </div>

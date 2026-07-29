@@ -42,6 +42,6 @@ O **App Fit** foi criado para demonstrar versatilidade técnica além do ecossis
 
 <div align="center">
 
-Desenvolvido por **[Igor Santos](https://github.com/MysterySalsicha)** · Full Stack Developer
+Desenvolvido por **[Igor Santos](https://github.com/igor-silva-santos)** · Full Stack Developer
 
 </div>

@@ -43,6 +43,6 @@ Este projeto demonstra a capacidade de transformar dados brutos em informações
 
 <div align="center">
 
-Desenvolvido por **[Igor Santos](https://github.com/MysterySalsicha)** · Full Stack Developer
+Desenvolvido por **[Igor Santos](https://github.com/igor-silva-santos)** · Full Stack Developer
 
 </div>
