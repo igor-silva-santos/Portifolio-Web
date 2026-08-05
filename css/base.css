@@ -89,24 +89,15 @@ section { position: relative; z-index: 1; }
 }
 
 /* ── SCROLL REVEAL ANIMATIONS ──────── */
-/* Estado inicial escondido — serve de fallback (JS desativado/lento) e
-   é o estado de partida que o GSAP anima a partir de (ver js/gsap-animations.js).
-   A transição e o antigo .visible saíram: quem anima agora é o GSAP, não o CSS. */
+/* IMPORTANTE: por padrão estes elementos ficam VISÍVEIS (sem opacity:0 aqui).
+   Quem esconde e revela é o GSAP, em js/gsap-animations.js, na hora que o
+   script roda com sucesso. Isso é de propósito: se o GSAP falhar por
+   qualquer motivo (CDN bloqueado, erro de JS, bug de mobile no ScrollTrigger),
+   o conteúdo continua visível — só perde a animação de entrada, em vez de
+   sumir da tela pra sempre. Nunca torne isto opacity:0 de novo. */
 @keyframes fade-up {
   from { opacity: 0; transform: translateY(28px); }
   to   { opacity: 1; transform: translateY(0); }
-}
-.reveal {
-  opacity: 0;
-  transform: translateY(36px);
-}
-.reveal-left {
-  opacity: 0;
-  transform: translateX(-36px);
-}
-.reveal-right {
-  opacity: 0;
-  transform: translateX(36px);
 }
 
 @keyframes pulse-dot {

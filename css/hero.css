@@ -139,29 +139,6 @@
   background: rgba(58,123,213,.08);
 }
 
-/* hero stats */
-.hero-stats {
-  display: flex;
-  gap: 40px;
-  margin-top: 60px;
-  padding-top: 40px;
-  border-top: 1px solid var(--border);
-  opacity: 0;
-  animation: fade-up .8s 1.2s forwards;
-}
-.stat-item { text-align: left; }
-.stat-number {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: 2rem;
-  font-weight: 800;
-  color: var(--white);
-  display: flex;
-  align-items: baseline;
-  gap: 2px;
-}
-.stat-number .plus { color: var(--blue-light); font-size: 1.5rem; }
-.stat-label { font-size: .8rem; color: var(--silver); letter-spacing: .08em; text-transform: uppercase; margin-top: 2px; }
-
 /* hero visual — now inside the flex row, not absolute */
 .hero-visual {
   flex-shrink: 0;

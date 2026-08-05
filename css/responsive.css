@@ -9,7 +9,7 @@
   .hero-inner { flex-direction: column; gap: 40px; }
   .hero-content { max-width: 100%; }
   .hero-visual { display: none; }
-  .hero-stats { gap: 24px; }
+  .scroll-indicator { display: none; }
   #sobre, #servicos, #formacao, #projetos, #contato { padding: 80px 24px; }
   .contact-layout { grid-template-columns: 1fr; gap: 40px; }
   .form-row { grid-template-columns: 1fr; }

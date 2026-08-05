@@ -1,9 +1,24 @@
 /* ── GSAP: REVEAL, STAGGER E BOTÕES MAGNÉTICOS ─────────────────────
    Substitui o antigo js/scroll-reveal.js (IntersectionObserver manual).
-   O CSS só define o estado inicial escondido (.reveal / .reveal-left /
-   .reveal-right em css/base.css) — quem anima é o GSAP a partir daqui. */
+   O CSS (css/base.css) deixa .reveal/.reveal-left/.reveal-right visíveis
+   por padrão — é este script que esconde e revela via GSAP. Se o GSAP não
+   carregar (CDN bloqueado etc.), o bloco abaixo simplesmente não roda e o
+   conteúdo continua visível, só sem a animação de entrada. */
 (function () {
+  if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') {
+    console.warn('GSAP/ScrollTrigger não carregaram — animações de scroll desativadas, conteúdo permanece visível.');
+    return;
+  }
+
   gsap.registerPlugin(ScrollTrigger);
+
+  // Corrige um bug conhecido do ScrollTrigger em celular: quando a barra de
+  // endereço do navegador esconde/aparece durante o scroll, a viewport muda
+  // de altura e o ScrollTrigger recalcula as posições de trigger com base
+  // nesse resize — o que pode fazer seções nunca disparar a revelação.
+  ScrollTrigger.config({ ignoreMobileResize: true });
+
+  try {
 
   /* ── REVEAL AO ROLAR ────────────────────────────────────────────
      Cada grupo de cards (serviços, formação, projetos) usa stagger
@@ -90,4 +105,14 @@
       yTo(0);
     });
   });
+
+  // reavalia posições depois que fontes/imagens terminarem de carregar
+  // (layout pode mudar de altura depois do primeiro cálculo do ScrollTrigger)
+  window.addEventListener('load', () => ScrollTrigger.refresh());
+
+  } catch (err) {
+    // qualquer erro aqui não deve deixar o site quebrado — o CSS já garante
+    // que o conteúdo está visível por padrão, então só avisamos no console.
+    console.warn('Erro ao configurar animações GSAP:', err);
+  }
 })();
