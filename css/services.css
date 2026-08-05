@@ -1,0 +1,106 @@
+/* ── SERVICES ──────────────────────── */
+#servicos {
+  padding: 120px 60px;
+  background: var(--bg);
+}
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.service-card {
+  padding: 36px 32px;
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  transition: all .4s ease;
+  position: relative;
+  overflow: hidden;
+}
+.service-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  background: linear-gradient(135deg, var(--glow2) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity .4s;
+}
+.service-card:hover {
+  border-color: var(--blue);
+  transform: translateY(-6px);
+  box-shadow: 0 20px 60px rgba(58,123,213,.2);
+}
+.service-card:hover::before { opacity: 1; }
+
+.service-icon {
+  width: 52px; height: 52px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--blue), rgba(90,155,245,.6));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  font-size: 1.4rem;
+  box-shadow: 0 4px 20px var(--glow);
+}
+.service-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 12px;
+}
+.service-desc {
+  color: var(--silver);
+  font-size: .9rem;
+  line-height: 1.75;
+}
+.service-list {
+  list-style: none;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.service-list li {
+  font-size: .85rem;
+  color: var(--silver);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.service-list li::before {
+  content: '';
+  width: 5px; height: 5px;
+  border-radius: 50%;
+  background: var(--blue-light);
+  flex-shrink: 0;
+}
+
+.tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 12px;
+}
+.tech-tag {
+  padding: 8px 18px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: .82rem;
+  font-weight: 500;
+  color: var(--silver);
+  background: var(--bg3);
+  transition: all .3s;
+  display: flex; align-items: center; gap: 6px;
+}
+.tech-tag:hover {
+  border-color: var(--blue);
+  color: var(--blue-light);
+  background: rgba(58,123,213,.08);
+  transform: translateY(-2px);
+}
+.tech-tag span { font-size: 1rem; }

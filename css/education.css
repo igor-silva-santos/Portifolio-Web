@@ -1,0 +1,79 @@
+/* ── FORMAÇÃO ──────────────────────── */
+#formacao {
+  padding: 120px 60px;
+  background: var(--bg);
+}
+.edu-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.edu-card {
+  padding: 36px 32px;
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  transition: all .4s;
+  position: relative;
+  overflow: hidden;
+}
+.edu-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--blue), var(--blue-light));
+  opacity: 0;
+  transition: opacity .4s;
+}
+.edu-card:hover { border-color: var(--blue); transform: translateY(-4px); box-shadow: 0 16px 48px rgba(58,123,213,.2); }
+.edu-card:hover::before { opacity: 1; }
+.edu-icon { font-size: 2rem; margin-bottom: 16px; }
+.edu-degree {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 6px;
+}
+.edu-institution { font-size: .88rem; color: var(--blue-light); font-weight: 600; margin-bottom: 4px; }
+.edu-year {
+  font-size: .8rem;
+  color: var(--silver);
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.edu-year::before {
+  content: '';
+  width: 14px; height: 1px;
+  background: var(--border);
+}
+/* disciplinas grid */
+.subjects-title {
+  font-size: .75rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--silver);
+  margin-bottom: 14px;
+}
+.subjects-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+.subject-chip {
+  padding: 4px 12px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: .74rem;
+  color: var(--silver);
+  background: rgba(58,123,213,.04);
+  transition: all .3s;
+}
+.subject-chip:hover { border-color: var(--blue-light); color: var(--blue-light); }
+.subject-chip.highlight { border-color: rgba(90,155,245,.35); color: var(--blue-light); background: rgba(58,123,213,.1); }

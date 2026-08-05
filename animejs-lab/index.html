@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Laboratório Anime.js — Igor Santos</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #080c18; --bg2: #0d1225; --bg3: #111828; --navy: #1a2540;
+    --blue: #3a7bd5; --blue-light: #5a9bf5; --silver: #a8b8d0;
+    --silver-lt: #d0dae8; --white: #eef2fa; --border: rgba(90,155,245,.18);
+    --glow: rgba(58,123,213,.35); --ok: #5adf9e; --warn: #f5b95a;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--white); font-family: 'Inter', sans-serif; line-height: 1.65; }
+  header.page-head {
+    padding: 70px 40px 50px; text-align: center; background: radial-gradient(circle at 50% 0%, rgba(58,123,213,.15), transparent 60%);
+    border-bottom: 1px solid var(--border);
+  }
+  header.page-head h1 { font-family: 'Space Grotesk', sans-serif; font-size: clamp(1.8rem,4vw,2.6rem); margin: 0 0 12px; }
+  header.page-head p { color: var(--silver); max-width: 680px; margin: 0 auto; font-size: .98rem; }
+  header.page-head .tag { display:inline-block; font-size:.72rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--blue-light); margin-bottom:14px; }
+
+  .warn-box {
+    max-width: 680px; margin: 22px auto 0; padding: 14px 18px; border-radius: 10px;
+    background: rgba(245,185,90,.08); border: 1px solid rgba(245,185,90,.3); color: var(--warn);
+    font-size: .84rem; text-align: left;
+  }
+  .warn-box b { color: #ffd9a0; }
+
+  main { max-width: 1100px; margin: 0 auto; padding: 20px 40px 120px; }
+
+  section.demo { padding: 70px 0; border-bottom: 1px solid var(--border); }
+  section.demo:last-child { border-bottom: none; }
+  .demo-head { display:flex; align-items:baseline; justify-content:space-between; gap: 20px; margin-bottom: 8px; flex-wrap: wrap; }
+  .demo-num { font-family:'Space Grotesk',sans-serif; color: var(--blue-light); font-size:.85rem; font-weight:700; letter-spacing:.08em; }
+  .demo h2 { font-family: 'Space Grotesk', sans-serif; font-size: 1.5rem; margin: 4px 0 10px; }
+  .demo > p.desc { color: var(--silver); max-width: 700px; margin-bottom: 26px; font-size: .94rem; }
+  .demo > p.desc code { color: var(--silver-lt); }
+
+  .demo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: start; }
+  @media (max-width: 800px) { .demo-grid { grid-template-columns: 1fr; } }
+
+  .stage {
+    background: var(--bg3); border: 1px solid var(--border); border-radius: 14px;
+    padding: 28px; min-height: 220px; display: flex; flex-direction: column;
+    align-items: center; justify-content: center; gap: 18px; position: relative; overflow: hidden;
+  }
+  pre.code {
+    background: #060910; border: 1px solid var(--border); border-radius: 14px;
+    padding: 20px 22px; overflow-x: auto; font-size: .8rem; margin: 0;
+    font-family: 'JetBrains Mono', monospace; color: var(--silver-lt);
+  }
+  pre.code .c { color: var(--silver); opacity:.6; }
+  pre.code .k { color: var(--blue-light); }
+  pre.code .s { color: var(--ok); }
+
+  .box { width: 56px; height: 56px; border-radius: 12px; background: linear-gradient(135deg,var(--blue),var(--blue-light)); box-shadow: 0 6px 24px var(--glow); }
+  .row { display:flex; gap:14px; align-items:center; }
+
+  .btn {
+    padding: 9px 20px; border-radius: 8px; border: 1.5px solid var(--blue);
+    background: transparent; color: var(--blue-light); font-weight: 600; font-size: .82rem;
+    cursor: pointer; transition: all .25s; letter-spacing:.02em;
+  }
+  .btn:hover { background: var(--blue); color: #fff; }
+
+  /* Demo 2: timeline cards */
+  .tl-cards { display:flex; gap:12px; }
+  .tl-card { width: 70px; height: 90px; border-radius: 10px; background: var(--navy); border:1px solid var(--border); opacity:0; transform: translateY(24px); }
+
+  /* Demo 3: stagger grid */
+  .stagger-grid { display:grid; grid-template-columns: repeat(6,1fr); gap:8px; width:100%; }
+  .stagger-grid .box { width:100%; height:34px; border-radius:8px; opacity:0; }
+
+  /* Demo 4: eases */
+  .ease-track { width:100%; }
+  .ease-row { display:flex; align-items:center; gap:14px; margin-bottom:14px; }
+  .ease-row .label { width:150px; font-size:.78rem; color:var(--silver); flex-shrink:0; }
+  .ease-lane { flex:1; height: 3px; background: var(--border); border-radius: 3px; position:relative; }
+  .ease-dot { position:absolute; top:50%; left:0; width:16px; height:16px; margin-top:-8px; border-radius:50%; background: var(--blue-light); box-shadow:0 0 12px var(--glow); }
+
+  /* Demo 5: scroll reveal simulation area */
+  .scroll-sim { height: 320px; overflow-y: auto; border-radius: 12px; background: var(--bg); border: 1px dashed var(--border); padding: 20px; }
+  .scroll-sim-inner { height: 700px; display:flex; flex-direction:column; gap:180px; padding-top: 60px; }
+  .reveal-card { padding: 22px; background: var(--bg3); border:1px solid var(--border); border-radius: 12px; opacity:0; transform: translateY(40px); }
+
+  /* Demo 6: scrub progress */
+  .scrub-area { height: 320px; overflow-y:auto; border-radius:12px; background:var(--bg); border:1px dashed var(--border); }
+  .scrub-inner { height: 900px; position:relative; padding: 20px; }
+  .progress-track { position: sticky; top: 12px; height: 6px; background: var(--border); border-radius: 4px; z-index:2; }
+  .progress-bar { height:100%; width:0%; background: linear-gradient(90deg,var(--blue),var(--blue-light)); border-radius:4px; }
+  .scrub-inner .marker { margin-top: 40px; padding: 16px; background: var(--bg3); border:1px solid var(--border); border-radius:10px; font-size:.85rem; color: var(--silver); }
+
+  /* Demo 7: magnetic button */
+  .magnetic-wrap { display:flex; align-items:center; justify-content:center; height: 180px; }
+  .magnetic-btn {
+    padding: 18px 40px; border-radius: 100px; background: linear-gradient(135deg,var(--blue),var(--blue-light));
+    color:#fff; font-weight:700; font-family:'Space Grotesk',sans-serif; cursor:pointer; border:none; font-size:.95rem;
+  }
+
+  footer.page-foot { text-align:center; padding: 40px; color: var(--silver); font-size: .82rem; border-top: 1px solid var(--border); }
+  footer.page-foot a { color: var(--blue-light); }
+</style>
+</head>
+<body>
+
+<header class="page-head">
+  <div class="tag">Laboratório · Anime.js v4</div>
+  <h1>Aprendendo Anime.js na prática</h1>
+  <p>Mesma estrutura do laboratório de GSAP: cada bloco isola um conceito, com demo ao vivo, código ao lado e botão "Replay". Anime.js v4 é mais leve e modular — mas a API muda em pontos importantes.</p>
+  <div class="warn-box">
+    <b>Diferenças que pegam quem vem do GSAP:</b> duração é em <b>milissegundos</b>, não segundos. Não existe <code>gsap.from()</code> separado — usa-se um valor em array <code>[de, para]</code> na própria propriedade. E a biblioteca é <b>ESM-only</b>: sem build tool, carregamos via <code>&lt;script type="module"&gt;</code> importando de um CDN, em vez de um <code>&lt;script src&gt;</code> comum que cria uma variável global.
+  </div>
+</header>
+
+<main>
+
+  <!-- ═══════════════ 1. ANIMATE BÁSICO ═══════════════ -->
+  <section class="demo">
+    <div class="demo-head">
+      <div>
+        <div class="demo-num">01 · ANIMATE</div>
+        <h2>animate() — "to" e "from" na mesma função</h2>
+      </div>
+      <button class="btn" id="btn-tween">Replay</button>
+    </div>
+    <p class="desc">Só existe <code>animate()</code>. Por padrão ele funciona como o <code>gsap.to()</code> (anima até o valor). Pra imitar o <code>gsap.from()</code>, passa a propriedade como array: <code>[valorInicial, valorFinal]</code>.</p>
+    <div class="demo-grid">
+      <div class="stage">
+        <div class="row" style="gap:34px;">
+          <div class="box" id="an-to"></div>
+          <div class="box" id="an-from"></div>
+        </div>
+      </div>
+      <pre class="code"><span class="c">// estilo "to" — anima ATÉ os valores</span>
+<span class="k">animate</span>(<span class="s">'#an-to'</span>, {
+  y: -30,
+  rotate: 180,
+  duration: 1000, <span class="c">// ms, não segundos!</span>
+  ease: <span class="s">'outQuad'</span>
+});
+
+<span class="c">// estilo "from" — array [de, para]</span>
+<span class="k">animate</span>(<span class="s">'#an-from'</span>, {
+  y: [-30, 0],
+  opacity: [0, 1],
+  duration: 1000,
+  ease: <span class="s">'outQuad'</span>
+});</pre>
+    </div>
+  </section>
+
+  <!-- ═══════════════ 2. TIMELINE ═══════════════ -->
+  <section class="demo">
+    <div class="demo-head">
+      <div>
+        <div class="demo-num">02 · TIMELINE</div>
+        <h2>Sequenciamento com createTimeline()</h2>
+      </div>
+      <button class="btn" id="btn-tl">Replay</button>
+    </div>
+    <p class="desc">Mesmo conceito do GSAP: uma timeline agrupa animações em sequência via <code>.add()</code>. A sintaxe de overlap ("-=0.3" no GSAP) existe aqui também através do parâmetro de posição, mas não testei todas as variações — vale checar a doc de <em>Time Position</em> antes de usar em produção. Por enquanto: sequência simples.</p>
+    <div class="demo-grid">
+      <div class="stage">
+        <div class="tl-cards">
+          <div class="tl-card"></div>
+          <div class="tl-card"></div>
+          <div class="tl-card"></div>
+          <div class="tl-card"></div>
+        </div>
+      </div>
+      <pre class="code"><span class="k">const</span> tl = <span class="k">createTimeline</span>({ defaults: { duration: 500 } });
+
+tl.add(<span class="s">'.tl-card:nth-child(1)'</span>, { opacity: 1, y: 0 })
+  .add(<span class="s">'.tl-card:nth-child(2)'</span>, { opacity: 1, y: 0 })
+  .add(<span class="s">'.tl-card:nth-child(3)'</span>, { opacity: 1, y: 0 })
+  .add(<span class="s">'.tl-card:nth-child(4)'</span>, { opacity: 1, y: 0 });
+
+<span class="c">// .label('nome') marca um ponto pra reaproveitar depois</span></pre>
+    </div>
+  </section>
+
+  <!-- ═══════════════ 3. STAGGER ═══════════════ -->
+  <section class="demo">
+    <div class="demo-head">
+      <div>
+        <div class="demo-num">03 · STAGGER</div>
+        <h2>stagger() no delay</h2>
+      </div>
+      <button class="btn" id="btn-stagger">Replay</button>
+    </div>
+    <p class="desc">Igual ao GSAP: em vez de <code>.stagger-1</code>..<code>.stagger-4</code> manuais no CSS, a função <code>stagger()</code> gera o delay escalonado pra você.</p>
+    <div class="demo-grid">
+      <div class="stage">
+        <div class="stagger-grid" id="stagger-grid">
+          <div class="box"></div><div class="box"></div><div class="box"></div>
+          <div class="box"></div><div class="box"></div><div class="box"></div>
+          <div class="box"></div><div class="box"></div><div class="box"></div>
+          <div class="box"></div><div class="box"></div><div class="box"></div>
+        </div>
+      </div>
+      <pre class="code"><span class="k">animate</span>(<span class="s">'#stagger-grid .box'</span>, {
+  opacity: 1,
+  y: 0,
+  duration: 500,
+  ease: <span class="s">'outBack'</span>,
+  delay: <span class="k">stagger</span>(60) <span class="c">// 60ms entre cada elemento</span>
+});</pre>
+    </div>
+  </section>
+
+  <!-- ═══════════════ 4. EASING ═══════════════ -->
+  <section class="demo">
+    <div class="demo-head">
+      <div>
+        <div class="demo-num">04 · EASING</div>
+        <h2>Nomes de ease diferentes do GSAP</h2>
+      </div>
+      <button class="btn" id="btn-ease">Replay</button>
+    </div>
+    <p class="desc">Mesma ideia do GSAP, nomenclatura diferente: aqui é <code>outQuad</code>, <code>outElastic(.8,1.2)</code> em vez de <code>power2.out</code>, <code>elastic.out(1,.4)</code>. O padrão é sempre <code>in</code>/<code>out</code>/<code>inOut</code> + nome da curva.</p>
+    <div class="demo-grid">
+      <div class="stage" style="align-items:stretch;">
+        <div class="ease-track" id="ease-track">
+          <div class="ease-row"><div class="label">outQuad</div><div class="ease-lane"><div class="ease-dot" data-ease="outQuad"></div></div></div>
+          <div class="ease-row"><div class="label">outExpo</div><div class="ease-lane"><div class="ease-dot" data-ease="outExpo"></div></div></div>
+          <div class="ease-row"><div class="label">outBack</div><div class="ease-lane"><div class="ease-dot" data-ease="outBack"></div></div></div>
+          <div class="ease-row"><div class="label">outElastic(.8,1.2)</div><div class="ease-lane"><div class="ease-dot" data-ease="outElastic(.8,1.2)"></div></div></div>
+          <div class="ease-row"><div class="label">outBounce</div><div class="ease-lane"><div class="ease-dot" data-ease="outBounce"></div></div></div>
+        </div>
+      </div>
+      <pre class="code"><span class="c">// mesma animação, ease diferente:</span>
+<span class="k">animate</span>(dot, { left: <span class="s">'90%'</span>, duration: 1400, ease: <span class="s">'outQuad'</span> });
+<span class="k">animate</span>(dot, { left: <span class="s">'90%'</span>, duration: 1400, ease: <span class="s">'outBack'</span> });
+<span class="k">animate</span>(dot, { left: <span class="s">'90%'</span>, duration: 1400, ease: <span class="s">'outElastic(.8,1.2)'</span> });
+<span class="k">animate</span>(dot, { left: <span class="s">'90%'</span>, duration: 1400, ease: <span class="s">'outBounce'</span> });
+
+<span class="c">// veja todas em animejs.com/documentation/easings/built-in-eases</span></pre>
+    </div>
+  </section>
+
+  <!-- ═══════════════ 5. ONSCROLL REVEAL ═══════════════ -->
+  <section class="demo">
+    <div class="demo-head">
+      <div>
+        <div class="demo-num">05 · ONSCROLL</div>
+        <h2>Reveal ao rolar (autoplay: onScroll)</h2>
+      </div>
+    </div>
+    <p class="desc">Equivalente ao ScrollTrigger do GSAP. Em vez de um parâmetro <code>scrollTrigger</code>, o <code>onScroll()</code> vira o valor de <code>autoplay</code> da própria animação. <code>enter</code>/<code>leave</code> definem os limiares como <code>"posição-do-alvo posição-do-container"</code>.</p>
+    <div class="demo-grid">
+      <div class="scroll-sim" id="scroll-sim-anime">
+        <div class="scroll-sim-inner">
+          <div class="reveal-card an-reveal">Card 1 — aparece ao entrar na viewport</div>
+          <div class="reveal-card an-reveal">Card 2 — controlado por onScroll(), não por observer manual</div>
+          <div class="reveal-card an-reveal">Card 3 — mesmo resultado do js/scroll-reveal.js atual</div>
+        </div>
+      </div>
+      <pre class="code"><span class="k">document</span>.querySelectorAll(<span class="s">'.an-reveal'</span>).forEach(el => {
+  <span class="k">animate</span>(el, {
+    opacity: [0, 1],
+    y: [40, 0],
+    duration: 800,
+    autoplay: <span class="k">onScroll</span>({
+      container: <span class="s">'#scroll-sim-anime'</span>,
+      enter: <span class="s">'top bottom'</span>,  <span class="c">// topo do card toca a base do container</span>
+      leave: <span class="s">'bottom top'</span>
+    })
+  });
+});
+
+<span class="c">// existe uma opção "repeat" no onScroll pra controlar
+// se a animação dispara de novo a cada vez que reentra</span></pre>
+    </div>
+  </section>
+
+  <!-- ═══════════════ 6. ONSCROLL SYNC (SCRUB) ═══════════════ -->
+  <section class="demo">
+    <div class="demo-head">
+      <div>
+        <div class="demo-num">06 · ONSCROLL</div>
+        <h2>sync: true — animação presa ao scroll</h2>
+      </div>
+    </div>
+    <p class="desc">Equivalente ao <code>scrub</code> do GSAP: com <code>sync: true</code> a animação não "dispara sozinha", ela acompanha a posição do scroll 1:1. Role a área abaixo devagar.</p>
+    <div class="demo-grid">
+      <div class="stage" style="align-items:stretch; padding:16px;">
+        <div class="scrub-area" id="scrub-area-anime">
+          <div class="scrub-inner">
+            <div class="progress-track"><div class="progress-bar" id="progress-bar-anime"></div></div>
+            <div class="marker">↓ role pra baixo</div>
+            <div class="marker">a barra acima segue o scroll 1:1</div>
+            <div class="marker">mesmo resultado do demo 06 do laboratório GSAP</div>
+            <div class="marker">fim</div>
+          </div>
+        </div>
+      </div>
+      <pre class="code"><span class="k">animate</span>(<span class="s">'#progress-bar-anime'</span>, {
+  width: [<span class="s">'0%'</span>, <span class="s">'100%'</span>],
+  ease: <span class="s">'linear'</span>,
+  autoplay: <span class="k">onScroll</span>({
+    container: <span class="s">'#scrub-area-anime'</span>,
+    sync: true <span class="c">// gruda no scroll ao invés de "tocar" a animação</span>
+  })
+});</pre>
+    </div>
+  </section>
+
+  <!-- ═══════════════ 7. ANIMATABLE ═══════════════ -->
+  <section class="demo">
+    <div class="demo-head">
+      <div>
+        <div class="demo-num">07 · INTERAÇÃO</div>
+        <h2>Botão magnético com createAnimatable()</h2>
+      </div>
+    </div>
+    <p class="desc">Equivalente ao <code>gsap.quickTo()</code>. <code>createAnimatable()</code> cria um objeto que você chama como função — <code>animatable.x(valor)</code> — otimizado pra eventos de alta frequência como <code>mousemove</code>. Aqui os números nas propriedades (<code>x: 400</code>) são a <b>duração em ms</b>, não o valor alvo — o valor alvo entra depois, na chamada.</p>
+    <div class="demo-grid">
+      <div class="stage magnetic-wrap">
+        <button class="magnetic-btn" id="magnetic-anime">Fale Comigo</button>
+      </div>
+      <pre class="code"><span class="k">const</span> btn = document.querySelector(<span class="s">'#magnetic-anime'</span>);
+<span class="k">const</span> animatable = <span class="k">createAnimatable</span>(btn, {
+  x: 400, <span class="c">// duração da animação de x, em ms</span>
+  y: 400,
+  ease: <span class="s">'out(3)'</span>
+});
+
+btn.addEventListener(<span class="s">'mousemove'</span>, (e) => {
+  const r = btn.getBoundingClientRect();
+  animatable.x((e.clientX - r.left - r.width/2) * 0.35);
+  animatable.y((e.clientY - r.top - r.height/2) * 0.35);
+});
+btn.addEventListener(<span class="s">'mouseleave'</span>, () => { animatable.x(0); animatable.y(0); });</pre>
+    </div>
+  </section>
+
+</main>
+
+<footer class="page-foot">
+  Laboratório local — não faz parte do site publicado. Carregado via CDN ESM (<code>jsdelivr +esm</code>), sem build tool. Quando decidirmos os efeitos, portamos pra <a href="../index.html">index.html</a>.
+</footer>
+
+<script type="module">
+  import {
+    animate,
+    createTimeline,
+    stagger,
+    onScroll,
+    createAnimatable,
+    utils
+  } from "https://cdn.jsdelivr.net/npm/animejs@4/+esm";
+
+  // expõe pro console, útil pra debugar/testar comandos na mão
+  window.anime4 = { animate, createTimeline, stagger, onScroll, createAnimatable, utils };
+
+  /* ── 01. ANIMATE ───────────────────────── */
+  function runTween() {
+    utils.set(["#an-to", "#an-from"], { y: 0, rotate: 0, opacity: 1 });
+    animate("#an-to", { y: -30, rotate: 180, duration: 1000, ease: "outQuad" });
+    animate("#an-from", { y: [-30, 0], opacity: [0, 1], duration: 1000, ease: "outQuad" });
+  }
+  document.getElementById("btn-tween").addEventListener("click", runTween);
+  runTween();
+
+  /* ── 02. TIMELINE ──────────────────────── */
+  function runTimeline() {
+    utils.set(".tl-card", { opacity: 0, y: 24 });
+    const tl = createTimeline({ defaults: { duration: 500 } });
+    document.querySelectorAll(".tl-card").forEach((card) => {
+      tl.add(card, { opacity: 1, y: 0 });
+    });
+  }
+  document.getElementById("btn-tl").addEventListener("click", runTimeline);
+  runTimeline();
+
+  /* ── 03. STAGGER ───────────────────────── */
+  function runStagger() {
+    utils.set("#stagger-grid .box", { opacity: 0, y: 16 });
+    animate("#stagger-grid .box", { opacity: 1, y: 0, duration: 500, ease: "outBack", delay: stagger(60) });
+  }
+  document.getElementById("btn-stagger").addEventListener("click", runStagger);
+  runStagger();
+
+  /* ── 04. EASING ────────────────────────── */
+  function runEasing() {
+    document.querySelectorAll(".ease-dot").forEach((dot) => {
+      utils.set(dot, { left: 0 });
+      animate(dot, { left: "90%", duration: 1400, ease: dot.dataset.ease });
+    });
+  }
+  document.getElementById("btn-ease").addEventListener("click", runEasing);
+  runEasing();
+
+  /* ── 05. ONSCROLL REVEAL ───────────────── */
+  document.querySelectorAll(".an-reveal").forEach((el) => {
+    animate(el, {
+      opacity: [0, 1],
+      y: [40, 0],
+      duration: 800,
+      autoplay: onScroll({
+        container: "#scroll-sim-anime",
+        enter: "top bottom",
+        leave: "bottom top"
+      })
+    });
+  });
+
+  /* ── 06. ONSCROLL SYNC (SCRUB) ─────────── */
+  animate("#progress-bar-anime", {
+    width: ["0%", "100%"],
+    ease: "linear",
+    autoplay: onScroll({
+      container: "#scrub-area-anime",
+      sync: true
+    })
+  });
+
+  /* ── 07. ANIMATABLE ────────────────────── */
+  (function () {
+    const btn = document.getElementById("magnetic-anime");
+    const animatable = createAnimatable(btn, { x: 400, y: 400, ease: "out(3)" });
+    btn.addEventListener("mousemove", (e) => {
+      const r = btn.getBoundingClientRect();
+      animatable.x((e.clientX - r.left - r.width / 2) * 0.35);
+      animatable.y((e.clientY - r.top - r.height / 2) * 0.35);
+    });
+    btn.addEventListener("mouseleave", () => { animatable.x(0); animatable.y(0); });
+  })();
+</script>
+
+</body>
+</html>
