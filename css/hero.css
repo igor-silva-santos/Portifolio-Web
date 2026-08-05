@@ -145,7 +145,8 @@
   width: 480px;
   height: 480px;
   position: relative;
-  pointer-events: none;
+  pointer-events: auto; /* easter egg: precisa receber clique (ver js/hero-easter-egg.js) */
+  cursor: pointer;
 }
 .hero-orb {
   position: absolute;
@@ -168,7 +169,7 @@
 .ring2 { inset: 160px; animation-duration: 40s; animation-direction: reverse; }
 .ring3 { inset: 240px; animation-duration: 60s; }
 
-.ring1::before, .ring2::before, .ring3::before {
+.ring1::before, .ring2::before, .ring3::before, .ring4::before {
   content: '';
   position: absolute;
   width: 8px; height: 8px;
@@ -177,6 +178,48 @@
   top: -4px; left: 50%;
   transform: translateX(-50%);
   box-shadow: 0 0 12px var(--blue-light);
+}
+
+/* ── EASTER EGG: O PLANETA EVOLUI CONFORME AS VISITAS ──────────────
+   Controlado por js/hero-easter-egg.js (conta dias diferentes de
+   visita no localStorage do navegador e adiciona classes pv-level-N
+   no .hero-visual). Sem JS ou com localStorage bloqueado, o planeta
+   só fica no estado inicial — nunca quebra, só não evolui. */
+
+/* nível 1: um 4º anel mais interno aparece */
+.ring4 {
+  inset: 40px;
+  animation-duration: 16s;
+  opacity: 0;
+  transition: opacity .8s ease;
+}
+.hero-visual.pv-level-1 .ring4,
+.hero-visual.pv-level-2 .ring4,
+.hero-visual.pv-level-3 .ring4 {
+  opacity: 1;
+}
+
+/* nível 2: uma segunda "lua" surge no ring2, girando em sentido oposto */
+.ring2::after {
+  content: '';
+  position: absolute;
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--silver-lt);
+  bottom: -3px; left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 0 10px var(--silver-lt);
+  opacity: 0;
+  transition: opacity .8s ease;
+}
+.hero-visual.pv-level-2 .ring2::after,
+.hero-visual.pv-level-3 .ring2::after {
+  opacity: 1;
+}
+
+/* nível 3: núcleo com um brilho mais forte, planeta "maduro" */
+.hero-visual.pv-level-3 .hero-orb {
+  filter: drop-shadow(0 0 36px rgba(90,155,245,.55));
 }
 
 /* ── SCROLL INDICATOR ──────────────── */
