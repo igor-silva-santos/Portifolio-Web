@@ -89,15 +89,39 @@ section { position: relative; z-index: 1; }
 }
 
 /* ── SCROLL REVEAL ANIMATIONS ──────── */
-/* IMPORTANTE: por padrão estes elementos ficam VISÍVEIS (sem opacity:0 aqui).
-   Quem esconde e revela é o GSAP, em js/gsap-animations.js, na hora que o
-   script roda com sucesso. Isso é de propósito: se o GSAP falhar por
-   qualquer motivo (CDN bloqueado, erro de JS, bug de mobile no ScrollTrigger),
-   o conteúdo continua visível — só perde a animação de entrada, em vez de
-   sumir da tela pra sempre. Nunca torne isto opacity:0 de novo. */
+/* Voltou a ser controlado por CSS + IntersectionObserver nativo
+   (js/scroll-reveal.js), sem depender de GSAP/ScrollTrigger. Depois de
+   duas rodadas de bugs com ScrollTrigker escondendo seções inteiras,
+   a decisão foi: conteúdo nunca deve depender de uma lib externa pra
+   ficar visível. GSAP fica só pros efeitos decorativos (botões
+   magnéticos, easter egg do planeta) — coisas que podem falhar sem
+   quebrar o site. */
 @keyframes fade-up {
   from { opacity: 0; transform: translateY(28px); }
   to   { opacity: 1; transform: translateY(0); }
+}
+.reveal {
+  opacity: 0;
+  transform: translateY(36px);
+  transition: opacity .7s ease, transform .7s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-36px);
+  transition: opacity .7s ease, transform .7s ease;
+}
+.reveal-right {
+  opacity: 0;
+  transform: translateX(36px);
+  transition: opacity .7s ease, transform .7s ease;
+}
+.reveal-left.visible, .reveal-right.visible {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 @keyframes pulse-dot {

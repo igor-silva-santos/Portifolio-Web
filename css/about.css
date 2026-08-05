@@ -48,6 +48,25 @@
   box-shadow: 0 0 16px var(--blue);
 }
 
+/* segunda órbita — duas bolinhas girando em velocidades/direções diferentes */
+.about-avatar-ring2 {
+  position: absolute;
+  inset: -38px;
+  border-radius: 50%;
+  border: 1px dashed var(--border);
+  animation: spin-ring 20s linear infinite reverse;
+}
+.about-avatar-ring2::before {
+  content: '';
+  position: absolute;
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--blue-light);
+  top: -4px; left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 0 12px var(--blue-light);
+}
+
 .about-text .section-header { text-align: left; margin-bottom: 24px; }
 .about-text .section-line { margin: 16px 0 0; }
 .about-text p {

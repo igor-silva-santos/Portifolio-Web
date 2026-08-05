@@ -90,6 +90,7 @@
       <div class="about-avatar-wrap reveal-left">
         <div class="about-avatar">
           <div class="about-avatar-ring"></div>
+          <div class="about-avatar-ring2"></div>
           <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
             <circle cx="50" cy="35" r="20" stroke="rgba(90,155,245,0.6)" stroke-width="2" fill="rgba(58,123,213,0.1)"/>
             <path d="M15 85 C15 65 85 65 85 85" stroke="rgba(90,155,245,0.6)" stroke-width="2" fill="rgba(58,123,213,0.1)"/>
@@ -141,7 +142,9 @@
     <div class="services-grid">
       <div class="service-card reveal" style="border-color:rgba(90,155,245,.3); position:relative; overflow:hidden;">
         <div style="position:absolute;top:12px;right:16px;font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--blue-light);background:rgba(58,123,213,.12);border:1px solid rgba(90,155,245,.3);padding:3px 10px;border-radius:100px;">Principal foco</div>
-        <div class="service-icon">🌐📱</div>
+        <div class="service-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+        </div>
         <div class="service-title">Desenvolvimento Web & Mobile</div>
         <div class="service-desc">Do site institucional ao app na loja — crio experiências digitais completas. Sites, sistemas, e-commerces e aplicativos com React, Next.js e React Native.</div>
         <ul class="service-list">
@@ -154,7 +157,9 @@
       </div>
 
       <div class="service-card reveal">
-        <div class="service-icon">🖥️</div>
+        <div class="service-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+        </div>
         <div class="service-title">Manutenção de Computadores</div>
         <div class="service-desc">Diagnóstico e reparo completo de desktops e notebooks. Formatação, limpeza, upgrade de hardware e otimização de desempenho.</div>
         <ul class="service-list">
@@ -166,7 +171,9 @@
       </div>
 
       <div class="service-card reveal">
-        <div class="service-icon">💼</div>
+        <div class="service-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+        </div>
         <div class="service-title">Consultoria em TI</div>
         <div class="service-desc">Assessoria completa para empresas e profissionais que precisam otimizar sua infraestrutura tecnológica com segurança e eficiência.</div>
         <ul class="service-list">
@@ -188,7 +195,9 @@
 
     <div class="edu-grid">
       <div class="edu-card reveal">
-        <div class="edu-icon">🎓</div>
+        <div class="edu-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1.5 2.7 3 6 3s6-1.5 6-3v-5"/></svg>
+        </div>
         <div class="edu-degree">Bacharelado em Ciências da Computação</div>
         <div class="edu-institution">Graduação — Ensino Superior</div>
         <div class="edu-year">Concluído</div>
@@ -209,7 +218,9 @@
       </div>
 
       <div class="edu-card reveal">
-        <div class="edu-icon">🏆</div>
+        <div class="edu-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
+        </div>
         <div class="edu-degree">Pós-Graduação em Full Stack Development</div>
         <div class="edu-institution">Turma 5FSDT · RM 362093</div>
         <div class="edu-year">2025 — Aprovado em todas as disciplinas</div>
@@ -253,7 +264,9 @@
     <div class="projects-grid">
 
       <div class="project-card reveal">
-        <div class="project-thumb" style="background:linear-gradient(135deg,#1a2a4a,#0d1840);">🛍️</div>
+        <div class="project-thumb" style="background:linear-gradient(135deg,#1a2a4a,#0d1840);">
+          <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        </div>
         <div class="project-body">
           <div class="project-badges">
             <span class="project-badge badge-blue">E-commerce</span>
@@ -269,30 +282,38 @@
       </div>
 
       <div class="project-card reveal">
-        <div class="project-thumb" style="background:linear-gradient(135deg,#0d2040,#0a1628);">🎧</div>
+        <div class="project-thumb" style="background:linear-gradient(135deg,#0d2040,#0a1628);">
+          <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        </div>
         <div class="project-body">
           <div class="project-badges">
-            <span class="project-badge badge-blue">Loja Virtual</span>
-            <span class="project-badge badge-silver">HTML/CSS</span>
+            <span class="project-badge badge-blue">Full Stack</span>
+            <span class="project-badge badge-silver">Next.js + Python</span>
           </div>
-          <div class="project-title">Drop Headphones</div>
-          <div class="project-desc">Loja premium de fones de ouvido com identidade visual sofisticada. Interface com animações fluídas e experiência de compra imersiva.</div>
-          <a href="https://github.com/igor-silva-santos/drop-headphones-loja-fones-premium" target="_blank" class="project-link">
+          <div class="project-title">Orbe Nerd</div>
+          <div class="project-desc">Plataforma para descobrir e acompanhar filmes, séries, animes e games num só lugar. Frontend em Next.js 15, backend em Flask (Python) com PostgreSQL e autenticação JWT, integrando as APIs do TMDB, Anilist e IGDB.</div>
+          <a href="https://orbe-seven.vercel.app" target="_blank" class="project-link">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            Ver ao vivo
+          </a>
+          <a href="https://github.com/igor-silva-santos/orbe" target="_blank" class="project-link" style="margin-left:16px;">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
-            Ver no GitHub
+            Código
           </a>
         </div>
       </div>
 
       <div class="project-card reveal">
-        <div class="project-thumb" style="background:linear-gradient(135deg,#162040,#0b1830);">🗓️</div>
+        <div class="project-thumb" style="background:linear-gradient(135deg,#162040,#0b1830);">
+          <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        </div>
         <div class="project-body">
           <div class="project-badges">
             <span class="project-badge badge-blue">Sistema Web</span>
             <span class="project-badge badge-silver">TypeScript</span>
           </div>
           <div class="project-title">Sistema de Agendamento</div>
-          <div class="project-desc">Plataforma de agendamento online para profissional de saúde mental. Gerenciamento de consultas, pacientes e horários com interface intuitiva.</div>
+          <div class="project-desc">Plataforma de agendamento online para profissional de saúde mental. Formulários validados com Zod e React Hook Form, persistência via Prisma e testes end-to-end com Cypress. Em evolução: sincronização com Google Agenda, lembretes por WhatsApp e telemedicina.</div>
           <a href="https://github.com/igor-silva-santos/psicologa-agendamento" target="_blank" class="project-link">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
             Ver no GitHub
@@ -301,7 +322,9 @@
       </div>
 
       <div class="project-card reveal">
-        <div class="project-thumb" style="background:linear-gradient(135deg,#0e1f3d,#081428);">💪</div>
+        <div class="project-thumb" style="background:linear-gradient(135deg,#0e1f3d,#081428);">
+          <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        </div>
         <div class="project-body">
           <div class="project-badges">
             <span class="project-badge badge-blue">Mobile App</span>
@@ -317,7 +340,9 @@
       </div>
 
       <div class="project-card reveal">
-        <div class="project-thumb" style="background:linear-gradient(135deg,#0f1e3a,#0a1525);">💰</div>
+        <div class="project-thumb" style="background:linear-gradient(135deg,#0f1e3a,#0a1525);">
+          <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+        </div>
         <div class="project-body">
           <div class="project-badges">
             <span class="project-badge badge-blue">Fintech</span>
@@ -333,7 +358,9 @@
       </div>
 
       <div class="project-card reveal">
-        <div class="project-thumb" style="background:linear-gradient(135deg,#162545,#0d1835);">📋</div>
+        <div class="project-thumb" style="background:linear-gradient(135deg,#162545,#0d1835);">
+          <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1"/><line x1="8" y1="12" x2="16" y2="12"/><line x1="8" y1="16" x2="16" y2="16"/></svg>
+        </div>
         <div class="project-body">
           <div class="project-badges">
             <span class="project-badge badge-blue">SaaS</span>
@@ -475,10 +502,10 @@
   <script src="js/particles.js"></script>
   <script src="js/nav.js"></script>
   <script src="js/typing.js"></script>
+  <script src="js/scroll-reveal.js"></script>
 
-  <!-- GSAP: precisa vir antes de js/gsap-animations.js -->
+  <!-- GSAP: só pro efeito decorativo (botões magnéticos + easter egg) -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.15.0/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.15.0/ScrollTrigger.min.js"></script>
   <script src="js/gsap-animations.js"></script>
   <script src="js/hero-easter-egg.js"></script>
 </body>

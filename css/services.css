@@ -46,6 +46,7 @@
   font-size: 1.4rem;
   box-shadow: 0 4px 20px var(--glow);
 }
+.service-icon svg { color: #fff; }
 .service-title {
   font-family: 'Space Grotesk', sans-serif;
   font-size: 1.15rem;

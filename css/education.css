@@ -30,7 +30,7 @@
 }
 .edu-card:hover { border-color: var(--blue); transform: translateY(-4px); box-shadow: 0 16px 48px rgba(58,123,213,.2); }
 .edu-card:hover::before { opacity: 1; }
-.edu-icon { font-size: 2rem; margin-bottom: 16px; }
+.edu-icon { margin-bottom: 16px; color: var(--blue-light); }
 .edu-degree {
   font-family: 'Space Grotesk', sans-serif;
   font-size: 1.15rem;
