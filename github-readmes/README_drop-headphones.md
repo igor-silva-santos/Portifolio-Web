@@ -37,7 +37,7 @@ Desenvolvido para demonstrar que é possível criar uma experiência de e-commer
 
 ```bash
 # Clone o repositório
-git clone https://github.com/MysterySalsicha/drop-headphones-loja-fones-premium.git
+git clone https://github.com/igor-silva-santos/drop-headphones-loja-fones-premium.git
 
 # Abra o projeto
 cd drop-headphones-loja-fones-premium
@@ -52,6 +52,6 @@ Não precisa de `npm install` — é puro HTML/CSS/JS! ✅
 
 <div align="center">
 
-Desenvolvido por **[Igor Santos](https://github.com/MysterySalsicha)** · Full Stack Developer
+Desenvolvido por **[Igor Santos](https://github.com/igor-silva-santos)** · Full Stack Developer
 
 </div>

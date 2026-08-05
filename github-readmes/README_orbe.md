@@ -38,7 +38,7 @@
 
 ```bash
 # Clone o repositório
-git clone https://github.com/MysterySalsicha/orbe.git
+git clone https://github.com/igor-silva-santos/orbe.git
 
 # Instale as dependências
 cd orbe
@@ -54,6 +54,6 @@ Acesse `http://localhost:3000`
 
 <div align="center">
 
-Desenvolvido por **[Igor Santos](https://github.com/MysterySalsicha)** · Full Stack Developer
+Desenvolvido por **[Igor Santos](https://github.com/igor-silva-santos)** · Full Stack Developer
 
 </div>

@@ -43,6 +43,6 @@ Este projeto representa um MVP (Mínimo Produto Viável) de uma solução real d
 
 <div align="center">
 
-Desenvolvido por **[Igor Santos](https://github.com/MysterySalsicha)** · Full Stack Developer
+Desenvolvido por **[Igor Santos](https://github.com/igor-silva-santos)** · Full Stack Developer
 
 </div>
