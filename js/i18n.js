@@ -156,21 +156,23 @@
       en: 'Complete online store for women\'s fashion. Product catalog, cart and order system — built with Next.js and responsive design.',
     },
 
+    'projects.p2.title': { pt: 'Orbe Nerd', en: 'Orbe Nerd' },
     'projects.p2.desc': {
-      pt: 'Plataforma para descobrir e acompanhar filmes, séries, animes e games num só lugar. Frontend em Next.js 15, backend em Flask (Python) com PostgreSQL e autenticação JWT, integrando as APIs do TMDB, Anilist e IGDB.',
-      en: 'Platform to discover and track movies, TV shows, anime and games in one place. Frontend in Next.js 15, backend in Flask (Python) with PostgreSQL and JWT authentication, integrating the TMDB, Anilist and IGDB APIs.',
+      pt: 'Plataforma para descobrir e acompanhar filmes, séries, animes e games num só lugar. Frontend em Next.js, backend em Flask (Python) com PostgreSQL e autenticação JWT, integrando as APIs do TMDB, Anilist e IGDB. UI Pulp Gráfico.',
+      en: 'Platform to discover and track movies, TV shows, anime and games in one place. Frontend in Next.js, backend in Flask (Python) with PostgreSQL and JWT authentication, integrating the TMDB, Anilist and IGDB APIs. Pulp graphic UI.',
     },
 
     'projects.p3.badge': { pt: 'Sistema Web', en: 'Web System' },
-    'projects.p3.title': { pt: 'Sistema de Agendamento', en: 'Scheduling System' },
+    'projects.p3.title': { pt: 'AgendaPsi', en: 'AgendaPsi' },
     'projects.p3.desc': {
       pt: 'Plataforma de agendamento online para profissional de saúde mental, com portal do paciente, faturamento com PDF, relatórios e assinatura digital de documentos. Formulários validados com Zod e React Hook Form, persistência via Prisma/Supabase e testes end-to-end com Cypress. Em evolução: lembretes por WhatsApp e telemedicina.',
       en: 'Online scheduling platform for a mental health professional, with patient portal, PDF billing, reports and digital document signing. Forms validated with Zod and React Hook Form, persistence via Prisma/Supabase and end-to-end tests with Cypress. Coming next: WhatsApp reminders and telemedicine.',
     },
 
+    'projects.p4.title': { pt: 'App Fit (HunterFit)', en: 'App Fit (HunterFit)' },
     'projects.p4.desc': {
-      pt: 'Aplicativo mobile de fitness e saúde. Acompanhamento de treinos, metas pessoais e evolução física com interface moderna e motivacional.',
-      en: 'Mobile fitness and health app. Workout tracking, personal goals and physical progress with a modern, motivating interface.',
+      pt: 'Aplicativo de fitness gamificado (HunterFit). Acompanhamento de treinos, metas pessoais e evolução física com frontend Next.js e backend .NET.',
+      en: 'Gamified fitness app (HunterFit). Workout tracking, personal goals and physical progress with Next.js frontend and .NET backend.',
     },
 
     'projects.p5.title': { pt: 'Planejamento Financeiro', en: 'Financial Planning' },
@@ -183,6 +185,12 @@
     'projects.p6.desc': {
       pt: 'Automação residencial com dashboards Lovelace, Docker e integrações — transformando a casa em um ambiente inteligente.',
       en: 'Home automation with Lovelace dashboards, Docker and integrations — turning a house into a truly smart environment.',
+    },
+
+    'projects.p7.title': { pt: 'Gmail Inbox Automation', en: 'Gmail Inbox Automation' },
+    'projects.p7.desc': {
+      pt: 'Automação genérica de Gmail: classifica e-mails, aplica labels, limpa marketing e gera relatório HTML com links de unsubscribe.',
+      en: 'Generic Gmail automation: classifies mail, applies labels, cleans marketing and generates an HTML report with unsubscribe links.',
     },
 
     'link.viewGithub': { pt: 'Ver no GitHub', en: 'View on GitHub' },
