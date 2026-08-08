@@ -94,7 +94,9 @@
       });
     }
 
-    showToast('🛰️ sistema estabilizado — você achou o modo secreto');
+    const toastMsg = (typeof window.i18nT === 'function' && window.i18nT('toast.secret')) ||
+      '🛰️ sistema estabilizado — você achou o modo secreto';
+    showToast(toastMsg);
   }
 
   function showToast(text) {

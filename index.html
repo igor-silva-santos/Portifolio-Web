@@ -31,13 +31,16 @@
       <div class="nav-dot"></div>
     </a>
     <ul class="nav-links">
-      <li><a href="#sobre">Sobre</a></li>
-      <li><a href="#servicos">Serviços</a></li>
-      <li><a href="#formacao">Formação</a></li>
-      <li><a href="#projetos">Projetos</a></li>
-      <li><a href="#contato">Contato</a></li>
+      <li><a href="#sobre" data-i18n="nav.about">Sobre</a></li>
+      <li><a href="#servicos" data-i18n="nav.services">Serviços</a></li>
+      <li><a href="#formacao" data-i18n="nav.education">Formação</a></li>
+      <li><a href="#projetos" data-i18n="nav.projects">Projetos</a></li>
+      <li><a href="#contato" data-i18n="nav.contact">Contato</a></li>
     </ul>
-    <a href="#contato" class="btn-nav">Fale Comigo</a>
+    <div class="nav-actions">
+      <button type="button" id="lang-toggle" class="lang-toggle" aria-label="Switch language / Mudar idioma">EN</button>
+      <a href="#contato" class="btn-nav" data-i18n="nav.cta">Fale Comigo</a>
+    </div>
   </nav>
 
   <!-- HERO -->
@@ -46,24 +49,24 @@
       <div class="hero-content">
         <div class="hero-badge">
           <div class="badge-dot"></div>
-          Disponível para projetos
+          <span data-i18n="hero.badge">Disponível para projetos</span>
         </div>
-        <h1 class="hero-title">
+        <h1 class="hero-title" data-i18n-html="hero.title">
           Olá, sou<br>
           <span class="name-highlight">Igor Santos</span>
         </h1>
         <div class="hero-typing">
           <span id="typing-text"></span><span class="cursor"></span>
         </div>
-        <p class="hero-desc">
+        <p class="hero-desc" data-i18n="hero.desc">
           Desenvolvedor Full Stack e Analista de Qualidade. Do suporte técnico à automação residencial e desenvolvimento de software, entrego soluções que transformam o cotidiano de pessoas e empresas.
         </p>
         <div class="hero-actions">
           <a href="#servicos" class="btn-primary">
-            Ver Serviços
+            <span data-i18n="hero.btn.services">Ver Serviços</span>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
-          <a href="#contato" class="btn-secondary">
+          <a href="#contato" class="btn-secondary" data-i18n="hero.btn.contact">
             Entrar em Contato
           </a>
         </div>
@@ -100,32 +103,32 @@
 
       <div class="about-text reveal-right">
         <div class="section-header">
-          <div class="section-tag">Sobre mim</div>
-          <h2 class="section-title">Tecnologia que <span class="accent">resolve</span></h2>
+          <div class="section-tag" data-i18n="about.tag">Sobre mim</div>
+          <h2 class="section-title" data-i18n-html="about.title">Tecnologia que <span class="accent">resolve</span></h2>
           <div class="section-line"></div>
         </div>
-        <p>
+        <p data-i18n-html="about.p1">
           Sou Igor Santos, graduado em <strong style="color:var(--silver-lt)">Ciências da Computação</strong> e pós-graduado em <strong style="color:var(--silver-lt)">Desenvolvimento Full Stack</strong>. Atuo como desenvolvedor e analista de qualidade de software — unindo visão técnica de ponta a ponta com entrega de valor real.
         </p>
-        <p>
+        <p data-i18n-html="about.p2">
           Como <strong style="color:var(--silver-lt)">Analista de Qualidade</strong>, garanto que cada solução entregue seja testada, estável e dentro dos padrões exigidos. No desenvolvimento, trabalho com React, Node.js, TypeScript e arquiteturas modernas como microsserviços e clean architecture.
         </p>
-        <p>
+        <p data-i18n-html="about.p3">
           Tenho forte atuação em <strong style="color:var(--silver-lt)">automação de sistemas com Python</strong> — criando scripts, bots e integrações que eliminam tarefas repetitivas e conectam sistemas de forma inteligente, gerando economia de tempo real para empresas e profissionais.
         </p>
-        <p>
+        <p data-i18n-html="about.p4">
           Além do mundo do software, ofereço consultoria de TI, manutenção de equipamentos e trabalho com <strong style="color:var(--silver-lt)">automação residencial com Home Assistant</strong> — transformando casas comuns em ambientes verdadeiramente inteligentes.
         </p>
         <div class="about-tags">
-          <span class="tag">Desenvolvedor Full Stack</span>
-          <span class="tag">Analista de Qualidade (QA)</span>
-          <span class="tag">Ciências da Computação</span>
+          <span class="tag" data-i18n="about.tag1">Desenvolvedor Full Stack</span>
+          <span class="tag" data-i18n="about.tag2">Analista de Qualidade (QA)</span>
+          <span class="tag" data-i18n="about.tag3">Ciências da Computação</span>
           <span class="tag">React & Node.js</span>
           <span class="tag">Home Assistant</span>
-          <span class="tag">Automação Residencial</span>
-          <span class="tag">Automação com Python</span>
-          <span class="tag">Consultoria em TI</span>
-          <span class="tag">Manutenção de Hardware</span>
+          <span class="tag" data-i18n="about.tag4">Automação Residencial</span>
+          <span class="tag" data-i18n="about.tag5">Automação com Python</span>
+          <span class="tag" data-i18n="about.tag6">Consultoria em TI</span>
+          <span class="tag" data-i18n="about.tag7">Manutenção de Hardware</span>
         </div>
       </div>
     </div>
@@ -134,25 +137,25 @@
   <!-- SERVICES -->
   <section id="servicos">
     <div class="section-header reveal">
-      <div class="section-tag">O que faço</div>
-      <h2 class="section-title">Serviços que <span class="accent">transformam</span></h2>
+      <div class="section-tag" data-i18n="services.tag">O que faço</div>
+      <h2 class="section-title" data-i18n-html="services.title">Serviços que <span class="accent">transformam</span></h2>
       <div class="section-line"></div>
     </div>
 
     <div class="services-grid">
       <div class="service-card reveal" style="border-color:rgba(90,155,245,.3); position:relative; overflow:hidden;">
-        <div style="position:absolute;top:12px;right:16px;font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--blue-light);background:rgba(58,123,213,.12);border:1px solid rgba(90,155,245,.3);padding:3px 10px;border-radius:100px;">Principal foco</div>
+        <div style="position:absolute;top:12px;right:16px;font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--blue-light);background:rgba(58,123,213,.12);border:1px solid rgba(90,155,245,.3);padding:3px 10px;border-radius:100px;" data-i18n="services.badge">Principal foco</div>
         <div class="service-icon">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
         </div>
-        <div class="service-title">Desenvolvimento Web & Mobile</div>
-        <div class="service-desc">Do site institucional ao app na loja — crio experiências digitais completas. Sites, sistemas, e-commerces e aplicativos com React, Next.js e React Native.</div>
+        <div class="service-title" data-i18n="services.s1.title">Desenvolvimento Web & Mobile</div>
+        <div class="service-desc" data-i18n="services.s1.desc">Do site institucional ao app na loja — crio experiências digitais completas. Sites, sistemas, e-commerces e aplicativos com React, Next.js e React Native.</div>
         <ul class="service-list">
-          <li>Sites, landing pages e e-commerces</li>
-          <li>Sistemas e dashboards web</li>
-          <li>Apps iOS e Android (React Native)</li>
+          <li data-i18n="services.s1.li1">Sites, landing pages e e-commerces</li>
+          <li data-i18n="services.s1.li2">Sistemas e dashboards web</li>
+          <li data-i18n="services.s1.li3">Apps iOS e Android (React Native)</li>
           <li>React, Next.js, TypeScript</li>
-          <li>Do conceito ao deploy — entrega completa</li>
+          <li data-i18n="services.s1.li5">Do conceito ao deploy — entrega completa</li>
         </ul>
       </div>
 
@@ -160,13 +163,13 @@
         <div class="service-icon">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
         </div>
-        <div class="service-title">Manutenção de Computadores</div>
-        <div class="service-desc">Diagnóstico e reparo completo de desktops e notebooks. Formatação, limpeza, upgrade de hardware e otimização de desempenho.</div>
+        <div class="service-title" data-i18n="services.s2.title">Manutenção de Computadores</div>
+        <div class="service-desc" data-i18n="services.s2.desc">Diagnóstico e reparo completo de desktops e notebooks. Formatação, limpeza, upgrade de hardware e otimização de desempenho.</div>
         <ul class="service-list">
-          <li>Formatação e reinstalação de sistema</li>
-          <li>Troca de peças e componentes</li>
-          <li>Limpeza interna e pasta térmica</li>
-          <li>Diagnóstico de falhas de hardware</li>
+          <li data-i18n="services.s2.li1">Formatação e reinstalação de sistema</li>
+          <li data-i18n="services.s2.li2">Troca de peças e componentes</li>
+          <li data-i18n="services.s2.li3">Limpeza interna e pasta térmica</li>
+          <li data-i18n="services.s2.li4">Diagnóstico de falhas de hardware</li>
         </ul>
       </div>
 
@@ -174,13 +177,13 @@
         <div class="service-icon">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
         </div>
-        <div class="service-title">Consultoria em TI</div>
-        <div class="service-desc">Assessoria completa para empresas e profissionais que precisam otimizar sua infraestrutura tecnológica com segurança e eficiência.</div>
+        <div class="service-title" data-i18n="services.s3.title">Consultoria em TI</div>
+        <div class="service-desc" data-i18n="services.s3.desc">Assessoria completa para empresas e profissionais que precisam otimizar sua infraestrutura tecnológica com segurança e eficiência.</div>
         <ul class="service-list">
-          <li>Análise e planejamento de infraestrutura</li>
-          <li>Suporte técnico especializado</li>
-          <li>Gestão de redes e segurança</li>
-          <li>Treinamento e capacitação</li>
+          <li data-i18n="services.s3.li1">Análise e planejamento de infraestrutura</li>
+          <li data-i18n="services.s3.li2">Suporte técnico especializado</li>
+          <li data-i18n="services.s3.li3">Gestão de redes e segurança</li>
+          <li data-i18n="services.s3.li4">Treinamento e capacitação</li>
         </ul>
       </div>
     </div>
@@ -188,8 +191,8 @@
   <!-- FORMAÇÃO -->
   <section id="formacao">
     <div class="section-header reveal">
-      <div class="section-tag">Educação</div>
-      <h2 class="section-title">Minha <span class="accent">formação</span></h2>
+      <div class="section-tag" data-i18n="edu.tag">Educação</div>
+      <h2 class="section-title" data-i18n-html="edu.title">Minha <span class="accent">formação</span></h2>
       <div class="section-line"></div>
     </div>
 
@@ -198,22 +201,22 @@
         <div class="edu-icon">
           <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1.5 2.7 3 6 3s6-1.5 6-3v-5"/></svg>
         </div>
-        <div class="edu-degree">Bacharelado em Ciências da Computação</div>
-        <div class="edu-institution">Graduação — Ensino Superior</div>
-        <div class="edu-year">Concluído</div>
-        <p style="font-size:.88rem;color:var(--silver);line-height:1.7;margin-bottom:20px;">
+        <div class="edu-degree" data-i18n="edu.e1.degree">Bacharelado em Ciências da Computação</div>
+        <div class="edu-institution" data-i18n="edu.e1.institution">Graduação — Ensino Superior</div>
+        <div class="edu-year" data-i18n="edu.e1.year">Concluído</div>
+        <p style="font-size:.88rem;color:var(--silver);line-height:1.7;margin-bottom:20px;" data-i18n="edu.e1.desc">
           Formação completa em fundamentos da computação: algoritmos, estrutura de dados, engenharia de software, redes, banco de dados e sistemas operacionais.
         </p>
-        <div class="subjects-title">Áreas de conhecimento</div>
+        <div class="subjects-title" data-i18n="edu.e1.subjectsTitle">Áreas de conhecimento</div>
         <div class="subjects-grid">
-          <span class="subject-chip highlight">Algoritmos</span>
-          <span class="subject-chip highlight">Estrutura de Dados</span>
-          <span class="subject-chip">Engenharia de Software</span>
-          <span class="subject-chip">Redes de Computadores</span>
-          <span class="subject-chip">Banco de Dados</span>
-          <span class="subject-chip">Sistemas Operacionais</span>
-          <span class="subject-chip">Computação em Nuvem</span>
-          <span class="subject-chip">Segurança da Informação</span>
+          <span class="subject-chip highlight" data-i18n="edu.e1.sub1">Algoritmos</span>
+          <span class="subject-chip highlight" data-i18n="edu.e1.sub2">Estrutura de Dados</span>
+          <span class="subject-chip" data-i18n="edu.e1.sub3">Engenharia de Software</span>
+          <span class="subject-chip" data-i18n="edu.e1.sub4">Redes de Computadores</span>
+          <span class="subject-chip" data-i18n="edu.e1.sub5">Banco de Dados</span>
+          <span class="subject-chip" data-i18n="edu.e1.sub6">Sistemas Operacionais</span>
+          <span class="subject-chip" data-i18n="edu.e1.sub7">Computação em Nuvem</span>
+          <span class="subject-chip" data-i18n="edu.e1.sub8">Segurança da Informação</span>
         </div>
       </div>
 
@@ -221,10 +224,10 @@
         <div class="edu-icon">
           <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
         </div>
-        <div class="edu-degree">Pós-Graduação em Full Stack Development</div>
+        <div class="edu-degree" data-i18n="edu.e2.degree">Pós-Graduação em Full Stack Development</div>
         <div class="edu-institution">Turma 5FSDT · RM 362093</div>
-        <div class="edu-year">2025 — Aprovado em todas as disciplinas</div>
-        <div class="subjects-title">Disciplinas cursadas e aprovadas</div>
+        <div class="edu-year" data-i18n="edu.e2.year">2025 — Aprovado em todas as disciplinas</div>
+        <div class="subjects-title" data-i18n="edu.e2.subjectsTitle">Disciplinas cursadas e aprovadas</div>
         <div class="subjects-grid">
           <span class="subject-chip highlight">React</span>
           <span class="subject-chip highlight">React Native</span>
@@ -232,22 +235,22 @@
           <span class="subject-chip highlight">TypeScript</span>
           <span class="subject-chip highlight">Next.js</span>
           <span class="subject-chip highlight">Docker</span>
-          <span class="subject-chip highlight">Microsserviços</span>
+          <span class="subject-chip highlight" data-i18n="edu.e2.sub7">Microsserviços</span>
           <span class="subject-chip highlight">Clean Architecture</span>
           <span class="subject-chip">Domain-Driven Design</span>
-          <span class="subject-chip">Arquitetura Cloud</span>
-          <span class="subject-chip">Banco de Dados</span>
+          <span class="subject-chip" data-i18n="edu.e2.sub10">Arquitetura Cloud</span>
+          <span class="subject-chip" data-i18n="edu.e2.sub11">Banco de Dados</span>
           <span class="subject-chip">DevOps</span>
           <span class="subject-chip">Microfrontend</span>
           <span class="subject-chip">Low Code Development</span>
           <span class="subject-chip">Flutter Flow</span>
-          <span class="subject-chip">Qualidade de Software</span>
-          <span class="subject-chip">UI/UX para Dev</span>
+          <span class="subject-chip" data-i18n="edu.e2.sub16">Qualidade de Software</span>
+          <span class="subject-chip" data-i18n="edu.e2.sub17">UI/UX para Dev</span>
           <span class="subject-chip">React Advanced</span>
           <span class="subject-chip">React Native Medium</span>
-          <span class="subject-chip">React Native Câmeras</span>
-          <span class="subject-chip">Introdução a APIs</span>
-          <span class="subject-chip">Node.js + Banco</span>
+          <span class="subject-chip" data-i18n="edu.e2.sub20">React Native Câmeras</span>
+          <span class="subject-chip" data-i18n="edu.e2.sub21">Introdução a APIs</span>
+          <span class="subject-chip" data-i18n="edu.e2.sub22">Node.js + Banco</span>
         </div>
       </div>
     </div>
@@ -256,8 +259,8 @@
   <!-- PROJETOS -->
   <section id="projetos">
     <div class="section-header reveal">
-      <div class="section-tag">Portfólio</div>
-      <h2 class="section-title">Projetos em <span class="accent">destaque</span></h2>
+      <div class="section-tag" data-i18n="projects.tag">Portfólio</div>
+      <h2 class="section-title" data-i18n-html="projects.title">Projetos em <span class="accent">destaque</span></h2>
       <div class="section-line"></div>
     </div>
 
@@ -272,11 +275,11 @@
             <span class="project-badge badge-blue">E-commerce</span>
             <span class="project-badge badge-silver">TypeScript</span>
           </div>
-          <div class="project-title">Loja de Moda Online</div>
-          <div class="project-desc">Loja virtual completa para moda feminina. Catálogo de produtos, carrinho e sistema de pedidos — desenvolvida com Next.js e design responsivo.</div>
+          <div class="project-title" data-i18n="projects.p1.title">Loja de Moda Online</div>
+          <div class="project-desc" data-i18n="projects.p1.desc">Loja virtual completa para moda feminina. Catálogo de produtos, carrinho e sistema de pedidos — desenvolvida com Next.js e design responsivo.</div>
           <a href="https://github.com/igor-silva-santos/loja-moda-online" target="_blank" class="project-link">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
-            Ver no GitHub
+            <span data-i18n="link.viewGithub">Ver no GitHub</span>
           </a>
         </div>
       </div>
@@ -291,14 +294,14 @@
             <span class="project-badge badge-silver">Next.js + Python</span>
           </div>
           <div class="project-title">Orbe Nerd</div>
-          <div class="project-desc">Plataforma para descobrir e acompanhar filmes, séries, animes e games num só lugar. Frontend em Next.js 15, backend em Flask (Python) com PostgreSQL e autenticação JWT, integrando as APIs do TMDB, Anilist e IGDB.</div>
+          <div class="project-desc" data-i18n="projects.p2.desc">Plataforma para descobrir e acompanhar filmes, séries, animes e games num só lugar. Frontend em Next.js 15, backend em Flask (Python) com PostgreSQL e autenticação JWT, integrando as APIs do TMDB, Anilist e IGDB.</div>
           <a href="https://orbe-seven.vercel.app" target="_blank" class="project-link">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-            Ver ao vivo
+            <span data-i18n="link.viewLive">Ver ao vivo</span>
           </a>
           <a href="https://github.com/igor-silva-santos/orbe" target="_blank" class="project-link" style="margin-left:16px;">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
-            Código
+            <span data-i18n="link.code">Código</span>
           </a>
         </div>
       </div>
@@ -309,14 +312,14 @@
         </div>
         <div class="project-body">
           <div class="project-badges">
-            <span class="project-badge badge-blue">Sistema Web</span>
+            <span class="project-badge badge-blue" data-i18n="projects.p3.badge">Sistema Web</span>
             <span class="project-badge badge-silver">TypeScript</span>
           </div>
-          <div class="project-title">Sistema de Agendamento</div>
-          <div class="project-desc">Plataforma de agendamento online para profissional de saúde mental, com portal do paciente, faturamento com PDF, relatórios e assinatura digital de documentos. Formulários validados com Zod e React Hook Form, persistência via Prisma/Supabase e testes end-to-end com Cypress. Em evolução: lembretes por WhatsApp e telemedicina.</div>
+          <div class="project-title" data-i18n="projects.p3.title">Sistema de Agendamento</div>
+          <div class="project-desc" data-i18n="projects.p3.desc">Plataforma de agendamento online para profissional de saúde mental, com portal do paciente, faturamento com PDF, relatórios e assinatura digital de documentos. Formulários validados com Zod e React Hook Form, persistência via Prisma/Supabase e testes end-to-end com Cypress. Em evolução: lembretes por WhatsApp e telemedicina.</div>
           <a href="https://github.com/igor-silva-santos/psicologa-agendamento" target="_blank" class="project-link">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
-            Ver no GitHub
+            <span data-i18n="link.viewGithub">Ver no GitHub</span>
           </a>
         </div>
       </div>
@@ -331,10 +334,10 @@
             <span class="project-badge badge-silver">React Native</span>
           </div>
           <div class="project-title">App Fit</div>
-          <div class="project-desc">Aplicativo mobile de fitness e saúde. Acompanhamento de treinos, metas pessoais e evolução física com interface moderna e motivacional.</div>
-          <a href="https://github.com/igor-silva-santos/app_fit" target="_blank" class="project-link">
+          <div class="project-desc" data-i18n="projects.p4.desc">Aplicativo mobile de fitness e saúde. Acompanhamento de treinos, metas pessoais e evolução física com interface moderna e motivacional.</div>
+          <a href="https://github.com/igor-silva-santos/app-fit" target="_blank" class="project-link">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
-            Ver no GitHub
+            <span data-i18n="link.viewGithub">Ver no GitHub</span>
           </a>
         </div>
       </div>
@@ -348,29 +351,29 @@
             <span class="project-badge badge-blue">Fintech</span>
             <span class="project-badge badge-silver">TypeScript</span>
           </div>
-          <div class="project-title">Planejamento Financeiro</div>
-          <div class="project-desc">Dashboard de controle financeiro pessoal. Acompanhamento de receitas, despesas e metas — para tomar melhores decisões com seu dinheiro.</div>
-          <a href="https://github.com/igor-silva-santos/PlanejamentoFinanceiro" target="_blank" class="project-link">
+          <div class="project-title" data-i18n="projects.p5.title">Planejamento Financeiro</div>
+          <div class="project-desc" data-i18n="projects.p5.desc">Dashboard de controle financeiro pessoal. Acompanhamento de receitas, despesas e metas — para tomar melhores decisões com seu dinheiro.</div>
+          <a href="https://github.com/igor-silva-santos/planejamento-financeiro" target="_blank" class="project-link">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
-            Ver no GitHub
+            <span data-i18n="link.viewGithub">Ver no GitHub</span>
           </a>
         </div>
       </div>
 
       <div class="project-card reveal">
         <div class="project-thumb" style="background:linear-gradient(135deg,#162545,#0d1835);">
-          <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1"/><line x1="8" y1="12" x2="16" y2="12"/><line x1="8" y1="16" x2="16" y2="16"/></svg>
+          <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
         </div>
         <div class="project-body">
           <div class="project-badges">
-            <span class="project-badge badge-blue">SaaS</span>
-            <span class="project-badge badge-silver">TypeScript</span>
+            <span class="project-badge badge-blue">IoT</span>
+            <span class="project-badge badge-silver">Home Assistant</span>
           </div>
-          <div class="project-title">Ficha OP Online</div>
-          <div class="project-desc">Sistema web para criação e gestão de fichas operacionais digitais. Substitui planilhas físicas por painel online com rastreabilidade completa.</div>
-          <a href="https://github.com/igor-silva-santos/Ficha-OP-Online" target="_blank" class="project-link">
+          <div class="project-title" data-i18n="projects.p6.title">Home Assistant</div>
+          <div class="project-desc" data-i18n="projects.p6.desc">Automação residencial com dashboards Lovelace, Docker e integrações — transformando a casa em um ambiente inteligente.</div>
+          <a href="https://github.com/igor-silva-santos/home-assistant" target="_blank" class="project-link">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
-            Ver no GitHub
+            <span data-i18n="link.viewGithub">Ver no GitHub</span>
           </a>
         </div>
       </div>
@@ -380,7 +383,7 @@
     <div style="text-align:center;margin-top:48px;" class="reveal">
       <a href="https://github.com/igor-silva-santos" target="_blank" class="btn-secondary" style="display:inline-flex;align-items:center;gap:10px;">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
-        Ver todos os projetos no GitHub
+        <span data-i18n="projects.viewAll">Ver todos os projetos no GitHub</span>
       </a>
     </div>
   </section>
@@ -389,8 +392,8 @@
   <section id="contato">
     <div style="max-width:1100px;margin:0 auto;">
       <div class="section-header reveal">
-        <div class="section-tag">Vamos construir juntos</div>
-        <h2 class="section-title">Transforme sua <span class="accent">ideia em realidade</span></h2>
+        <div class="section-tag" data-i18n="contact.tag">Vamos construir juntos</div>
+        <h2 class="section-title" data-i18n-html="contact.title">Transforme sua <span class="accent">ideia em realidade</span></h2>
         <div class="section-line"></div>
       </div>
     </div>
@@ -399,11 +402,11 @@
       <!-- FORMULÁRIO + TEXTO INSPIRACIONAL -->
       <div class="contact-form-side reveal-left">
         <div class="contact-inspire">
-          <div class="contact-inspire-title">
+          <div class="contact-inspire-title" data-i18n-html="contact.inspire.title">
             Você imaginou,<br>
             <span class="accent-text">eu consigo construir.</span>
           </div>
-          <p class="contact-inspire-sub">
+          <p class="contact-inspire-sub" data-i18n-html="contact.inspire.sub">
             Não importa se é um site, um app, um sistema completo ou uma casa inteligente. Se você consegue imaginar, eu tenho o conhecimento para transformar isso em algo real, funcional e que encanta quem usa.
             <br><br>
             Compartilhe sua ideia — por mais ousada que pareça. Responderei em até 24 horas.
@@ -413,24 +416,24 @@
         <form class="contact-form" action="mailto:igorsan.contato@gmail.com" method="get" enctype="text/plain">
           <div class="form-row">
             <div class="form-group">
-              <label class="form-label">Nome <span class="req">*</span></label>
-              <input type="text" class="form-input" placeholder="Seu nome completo" name="from" required />
+              <label class="form-label"><span data-i18n="contact.form.name">Nome</span> <span class="req">*</span></label>
+              <input type="text" class="form-input" placeholder="Seu nome completo" data-i18n-placeholder="contact.form.name.ph" name="from" required />
             </div>
             <div class="form-group">
-              <label class="form-label">E-mail <span class="req">*</span></label>
+              <label class="form-label"><span data-i18n="contact.form.email">E-mail</span> <span class="req">*</span></label>
               <input type="email" class="form-input" placeholder="seu@email.com" name="email" required />
             </div>
           </div>
           <div class="form-group">
-            <label class="form-label">Assunto</label>
-            <input type="text" class="form-input" placeholder="Site, app, automação, suporte..." name="subject" />
+            <label class="form-label" data-i18n="contact.form.subject">Assunto</label>
+            <input type="text" class="form-input" placeholder="Site, app, automação, suporte..." data-i18n-placeholder="contact.form.subject.ph" name="subject" />
           </div>
           <div class="form-group">
-            <label class="form-label">Mensagem <span class="req">*</span></label>
-            <textarea class="form-textarea" placeholder="Fale sobre sua ideia ou projeto. Não precisa ser perfeito — estou aqui para ajudar a moldar juntos." name="body" required></textarea>
+            <label class="form-label"><span data-i18n="contact.form.message">Mensagem</span> <span class="req">*</span></label>
+            <textarea class="form-textarea" placeholder="Fale sobre sua ideia ou projeto. Não precisa ser perfeito — estou aqui para ajudar a moldar juntos." data-i18n-placeholder="contact.form.message.ph" name="body" required></textarea>
           </div>
           <button type="submit" class="btn-submit">
-            Enviar Mensagem
+            <span data-i18n="contact.form.submit">Enviar Mensagem</span>
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
           </button>
         </form>
@@ -439,7 +442,7 @@
       <!-- SIDEBAR -->
       <div class="contact-sidebar reveal-right">
         <div class="contact-quote-box">
-          <div class="contact-quote-text">
+          <div class="contact-quote-text" data-i18n="contact.quote">
             "Cada grande produto digital começou como uma ideia na cabeça de alguém. O que muda é encontrar quem tenha a técnica e a paixão para transformá-la em realidade. É exatamente isso que faço."
           </div>
           <div class="contact-quote-author">Igor Santos</div>
@@ -460,7 +463,7 @@
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
           </div>
           <div>
-            <div class="contact-label">E-mail</div>
+            <div class="contact-label" data-i18n="contact.form.email">E-mail</div>
             <div class="contact-value">igorsan.contato@gmail.com</div>
           </div>
         </a>
@@ -490,15 +493,16 @@
 
   <!-- FOOTER -->
   <footer>
-    <div class="footer-copy">© 2025 Igor Santos — Todos os direitos reservados</div>
+    <div class="footer-copy" data-i18n="footer.copy">© 2025 Igor Santos — Todos os direitos reservados</div>
     <div class="footer-links">
-      <a href="#sobre">Sobre</a>
-      <a href="#servicos">Serviços</a>
-      <a href="#formacao">Formação</a>
-      <a href="#contato">Contato</a>
+      <a href="#sobre" data-i18n="nav.about">Sobre</a>
+      <a href="#servicos" data-i18n="nav.services">Serviços</a>
+      <a href="#formacao" data-i18n="nav.education">Formação</a>
+      <a href="#contato" data-i18n="nav.contact">Contato</a>
     </div>
   </footer>
 
+  <script src="js/i18n.js"></script>
   <script src="js/particles.js"></script>
   <script src="js/nav.js"></script>
   <script src="js/typing.js"></script>

@@ -1,18 +1,26 @@
 /* ── TYPING EFFECT (hero) ─────────── */
 (function () {
-  const phrases = [
-    'Desenvolvedor Full Stack',
-    'Analista de Qualidade (QA)',
-    'Consultor de TI',
-    'Entusiasta de Home Assistant',
-    'Consultor de Automação',
-  ];
   const el = document.getElementById('typing-text');
   if (!el) return;
 
+  const fallback = ['Desenvolvedor Full Stack'];
+  function getPhrases() {
+    const lang = window.SITE_LANG === 'en' ? 'en' : 'pt';
+    return (window.i18nPhrases && window.i18nPhrases[lang]) || fallback;
+  }
+
+  let phrases = getPhrases();
   let pi = 0, ci = 0, typing = true;
+
+  // se o idioma mudar (toggle manual), recomeça a digitação com as frases certas
+  document.addEventListener('langchange', () => {
+    phrases = getPhrases();
+    pi = 0; ci = 0; typing = true;
+    el.textContent = '';
+  });
+
   function type() {
-    const phrase = phrases[pi];
+    const phrase = phrases[pi % phrases.length];
     if (typing) {
       el.textContent = phrase.slice(0, ++ci);
       if (ci === phrase.length) { typing = false; setTimeout(type, 2000); return; }

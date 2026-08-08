@@ -51,12 +51,12 @@ O portfólio destaca uma seleção de projetos que demonstram competência em di
 
 | Projeto | Categoria | Descrição |
 | :--- | :--- | :--- |
-| **Loja de Moda Online** | E-commerce | Plataforma completa desenvolvida com Next.js. |
-| **Drop Headphones** | UI/UX | Loja premium com foco em design sofisticado. |
-| **Sistema de Agendamento** | SaaS | Gerenciamento de consultas para profissionais de saúde. |
+| **Orbe Nerd** | Full Stack | Filmes, séries, animes e games num só lugar. |
+| **Sistema de Agendamento** | SaaS | Agendamento para saúde mental com portal e faturamento. |
+| **Loja de Moda Online** | E-commerce | Catálogo, carrinho e pedidos com Next.js. |
 | **App Fit** | Mobile | Acompanhamento fitness com interface motivacional. |
 | **Planejamento Financeiro** | Fintech | Dashboard inteligente para controle de gastos. |
-| **Ficha OP Online** | Automação | Digitalização de processos operacionais industriais. |
+| **Home Assistant** | IoT | Automação residencial com Docker e Lovelace. |
 
 ---
 

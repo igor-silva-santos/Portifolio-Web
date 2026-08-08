@@ -84,3 +84,32 @@ nav.scrolled {
   color: #fff;
   box-shadow: 0 0 24px var(--glow);
 }
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.lang-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+  background: transparent;
+  color: var(--silver);
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .04em;
+  cursor: pointer;
+  transition: all .3s;
+}
+.lang-toggle:hover {
+  border-color: var(--blue);
+  color: var(--blue-light);
+  box-shadow: 0 0 16px var(--glow);
+}
