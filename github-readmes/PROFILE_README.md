@@ -76,9 +76,9 @@ const igor = {
 |---|---|---|---|
 | **[Orbe Nerd](https://github.com/igor-silva-santos/orbe)** | Descoberta e acompanhamento de filmes, séries, animes e games num só lugar (TMDB, Anilist, IGDB) | Next.js · Flask · PostgreSQL · JWT | [Demo](https://orbe-seven.vercel.app) · [Código](https://github.com/igor-silva-santos/orbe) |
 | **[AgendaPsi](https://github.com/igor-silva-santos/agenda-psi)** | Agenda + portal do paciente + faturamento PDF + assinatura digital para consultórios de psicologia | Next.js · Prisma · Supabase · Cypress | [Demo](https://psicologa-agendamento.vercel.app) · [Código](https://github.com/igor-silva-santos/agenda-psi) |
-| **[Loja de Moda Online](https://github.com/igor-silva-santos/loja-moda-online)** | E-commerce de moda com catálogo, carrinho e fluxo de pedidos | Next.js · TypeScript · Tailwind | [Demo](https://andressa-modas.vercel.app) · [Código](https://github.com/igor-silva-santos/loja-moda-online) |
+| **[Loja de Moda Online](https://github.com/igor-silva-santos/loja-moda-online)** | E-commerce de moda com catálogo, carrinho e fluxo de pedidos | Next.js · TypeScript · Tailwind | [Código](https://github.com/igor-silva-santos/loja-moda-online) · _demo Vercel offline (404 em andressa-modas.vercel.app — redeploy pendente)_ |
 | **[Planejamento Financeiro](https://github.com/igor-silva-santos/planejamento-financeiro)** | Dashboard de receitas, despesas e metas para decisão financeira | Next.js · TypeScript | [Código](https://github.com/igor-silva-santos/planejamento-financeiro) |
-| **[App Fit](https://github.com/igor-silva-santos/app-fit)** | Acompanhamento de treinos, metas e evolução física | React Native / mobile | [Código](https://github.com/igor-silva-santos/app-fit) |
+| **[App Fit](https://github.com/igor-silva-santos/app-fit)** | Acompanhamento de treinos, metas e evolução física (HunterFit) | Next.js · .NET · TypeScript | [Código](https://github.com/igor-silva-santos/app-fit) |
 | **[Home Assistant](https://github.com/igor-silva-santos/home-assistant)** | Automação residencial com dashboards Lovelace, Docker e integrações | Home Assistant · Docker · YAML | [Código](https://github.com/igor-silva-santos/home-assistant) |
 
 > Portfólio completo: **[portifolio-igor-silva-santos.vercel.app](https://portifolio-igor-silva-santos.vercel.app/)**

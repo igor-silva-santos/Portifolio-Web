@@ -10,7 +10,7 @@
 2. No campo **"Repository name"**, troque por: **`loja-moda-online`**
 3. Clique em **"Rename"** e confirme
 
-✅ O link antigo (andressa-modas.vercel.app) continua funcionando no Vercel.
+⚠️ Demo `andressa-modas.vercel.app` retorna 404 (ago/2026). Sem Vercel CLI local — redeploy manual necessário no dashboard Vercel; homepage do repo limpa temporariamente.
 
 ---
 
